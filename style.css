@@ -1,48 +1,190 @@
-/* Criar estilo para a pagina */
+/* ==========================================================
+   1. VARIÁVEIS E RESET
+   ========================================================== */
+
+:root {
+    --cor-fundo: #9fc590;
+    --cor-principal: #2f6b61;
+    --cor-escura: #24574f;
+    --cor-clara: #c3dbc4;
+    --cor-borda: #cccccc;
+    --cor-borda-clara: #9bcfc4;
+    --cor-texto: #333333;
+    --cor-branca: #ffffff;
+    --cor-link-claro: #1a4f47;
+}
+
+/* Faz width/max-width incluírem padding e borda */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   2. BASE (estilos gerais da página)
+   ========================================================== */
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #9fc590;
-    margin: 5px;
-    padding: 5px;
+    line-height: 1.5;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    margin: 0;
+    padding: 8px;
 }
-/* Estilo para a seção principal */
-section {
-    background-color: #44887d;
-    border: 2px solid #CCCCCC;
-    border-radius: 8px;
-    padding: 20px;
-}
-/* Estilo para os artigos */
-article {
-    background-color: #c3dbc4;
-    border: 2px solid #9bcfc4;
-    border-radius: 8px;
-    padding: 20px;
-}
-/* Estilo para os títulos */
-h2, h3 {
-    /* Toda vez que precisar trocar a cor do texto, declare a tag que contenha o texto que 
-    va trocar de cor e chame o argumento color */
-    color: #333333;
+
+/* A cor dos títulos é herdada do contêiner
+   (branca na section, escura no article) */
+h2,
+h3 {
     font-family: 'Arial', sans-serif;
-    font-size: 16px;
     font-style: oblique;
     font-weight: bold;
     margin-bottom: 12px;
 }
-/* Estilo para cabeçalhos */
-header {
-    background-color: #44887d;
-    color: #ffffff;
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+p,
+ul {
+    margin-bottom: 12px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Links: padrão para fundo escuro (section, header, footer) */
+a {
+    color: var(--cor-branca);
+}
+
+a:hover,
+a:focus-visible {
+    text-decoration: underline;
+    outline: 2px solid var(--cor-branca);
+    outline-offset: 2px;
+}
+
+/* Links dentro do article (fundo claro) */
+article a {
+    color: var(--cor-link-claro);
+}
+
+article a:hover,
+article a:focus-visible {
+    outline-color: var(--cor-link-claro);
+}
+
+
+/* ==========================================================
+   3. LAYOUT (estrutura da página)
+   ========================================================== */
+
+header,
+footer {
+    background-color: var(--cor-escura);
+    color: var(--cor-branca);
     padding: 10px;
     text-align: center;
 }
 
 .content {
     display: flex;
-    flex-direction: column;   
+    flex-direction: column;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
 
+section {
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+    border: 2px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+article {
+    background-color: var(--cor-clara);
+    color: var(--cor-texto);
+    border: 2px solid var(--cor-borda-clara);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+
+/* ==========================================================
+   4. COMPONENTES (cartão de perfil)
+   ========================================================== */
+
+.cartao-perfil {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.cartao-perfil img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Agrupa os textos do cartão e espaça com gap */
+.cartao-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cartao-titulo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cartao-subtitulo {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.cartao-descricao {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.cartao-status {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* ==========================================================
+   5. RESPONSIVIDADE (media queries sempre por último)
+   ========================================================== */
+
+@media (max-width: 600px) {
+    .content {
+        padding: 10px;
+    }
+
+    .cartao-perfil {
+        flex-direction: column;
+        text-align: center;
+    }
+}
