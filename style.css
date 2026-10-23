@@ -102,6 +102,15 @@ footer {
     text-align: center;
 }
 
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -118,6 +127,7 @@ section {
     padding: 20px;
 }
 
+
 article {
     background-color: var(--cor-clara);
     color: var(--cor-texto);
@@ -125,6 +135,7 @@ article {
     border-radius: 8px;
     padding: 20px;
 }
+
 
 
 /* ==========================================================
@@ -173,6 +184,14 @@ article {
     font-weight: bold;
 }
 
+figure {
+    margin: 0;
+    text-align: center;
+}
+
+figure img {
+    border-radius: 8px;
+}
 
 /* ==========================================================
    5. RESPONSIVIDADE (media queries sempre por último)
