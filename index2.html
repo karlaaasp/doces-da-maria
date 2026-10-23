@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Espaço Digital</title>
+
+    <style>
+        /* Configuração geral */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: #f1f5f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #1e293b;
+            padding: 25px;
+            text-align: center;
+            border-bottom: 2px solid #38f9a5;
+        }
+
+        header h1 {
+            color: #38f9a5;
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            color: #cbd5e1;
+        }
+
+        /* Menu de navegação */
+        nav {
+            text-align: center;
+            padding: 15px;
+            background-color: #111c30;
+        }
+
+        nav a {
+            color: #38f9a5;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        /* Conteúdo principal */
+        main {
+            padding: 30px 20px;
+        }
+
+        .card {
+            background-color: #1e293b;
+            padding: 25px;
+            max-width: 600px;
+            margin: 25px auto;
+            border-radius: 15px;
+            border: 2px solid #334155;
+            box-shadow: 0 8px 25px #00000030;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #38f9a5;
+        }
+
+        .card h2 {
+            color: #38f9a5;
+        }
+
+        .card p {
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+
+        /* Botão */
+        button {
+            background-color: #38f9a5;
+            color: #0f172a;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #20d98a;
+            transform: scale(1.05);
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background-color: #1e293b;
+            color: #94a3b8;
+        }
+
+        /* Ajuste para celulares */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 26px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            .card {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Meu Espaço Digital</h1>
+        <p>Aprendendo a criar sites com HTML e CSS</p>
+    </header>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <main>
+        <section id="inicio" class="card">
+            <h2>Bem-vindo ao meu site!</h2>
+            <p>
+                Este é meu espaço na internet. Estou aprendendo
+                programação e criando meu primeiro site.
+            </p>
+            <button onclick="alert('Obrigado por visitar meu site!')">
+                Clique aqui
+            </button>
+        </section>
+
+        <section id="sobre" class="card">
+            <h2>Sobre mim</h2>
+            <p>
+                Gosto de tecnologia, criatividade e de aprender
+                coisas novas. Este site é um dos meus primeiros projetos.
+            </p>
+        </section>
+
+        <section id="projetos" class="card">
+            <h2>Meus projetos</h2>
+            <p>
+                Aqui vou colocar meus projetos, minhas ideias
+                e tudo o que eu desenvolver enquanto aprendo.
+            </p>
+            <button onclick="alert('Em breve teremos novidades!')">
+                Ver projetos
+            </button>
+        </section>
+
+        <section id="contato" class="card">
+            <h2>Contato</h2>
+            <p>
+                Obrigado por visitar meu site!
+                Em breve adicionarei meus contatos aqui.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Meu Espaço Digital. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
