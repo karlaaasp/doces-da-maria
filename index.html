@@ -5,32 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Doces da Maria: bolos, tortas, doces para festa e sobremesas no pote feitos artesanalmente e com carinho.">
     <title>Doces da Maria - Confeitaria artesanal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="doces_maria/style.css">
 </head>
 
 <body>
-
     <header>
-        <a href="#inicio">
-            <img src="doces_maria/logo.svg" alt="Doces da Maria - Confeitaria artesanal" class="logo-img">
-        </a>
-        <nav aria-label="Menu principal">
-            <a href="#inicio">Início</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#precos">Preços</a>
-            <a href="#contato">Contato</a>
-        </nav>
+        <div class="conteudo header-inner">
+            <a href="#inicio" class="logo-link" aria-label="Início">
+                <img src="doces_maria/logo.svg" alt="Doces da Maria - Confeitaria artesanal" class="logo-img">
+            </a>
+            <nav aria-label="Menu principal" class="nav-principal">
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#precos">Preços</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
     </header>
 
     <main>
         <section id="inicio" class="banner">
-            <div class="conteudo">
+            <div class="conteudo banner-content">
                 <div class="banner-texto">
+                    <span class="eyebrow">Confeitaria artesanal</span>
                     <h1>Bolos e doces feitos artesanalmente e com carinho</h1>
                     <p>Descubra o sabor único dos nossos produtos, feitos com ingredientes selecionados e muito amor.</p>
-                    <a class="botao" href="#contato">Entre em contato</a>
+                    <div class="botoes">
+                        <a class="botao" href="#contato">Entre em contato</a>
+                        <a class="botao botao-secundario" href="#precos">Ver preços</a>
+                    </div>
                 </div>
+
                 <div class="banner-imagem" aria-label="Galeria de fotos de doces artesanais">
                     <img src="doces_maria/bolosartesanais.jpg" alt="Bolos e doces artesanais" width="600" height="400">
                     <img src="doces_maria/bolo-cenoura-pote.jpg" alt="Bolo de cenoura no pote" width="600" height="400">
@@ -39,12 +48,27 @@
             </div>
         </section>
 
+        <section class="destaques">
+            <div class="conteudo destaques-grid">
+                <div class="destaque-item">
+                    <strong>+20 anos</strong>
+                    <span>de experiência em confeitaria</span>
+                </div>
+                <div class="destaque-item">
+                    <strong>100%</strong>
+                    <span>artesanal e produzido com carinho</span>
+                </div>
+                <div class="destaque-item">
+                    <strong>Entrega</strong>
+                    <span>para festas e ocasiões especiais</span>
+                </div>
+            </div>
+        </section>
+
         <section id="sobre" class="sobre">
             <div class="conteudo">
                 <h2>Sobre nós</h2>
-                <p>Na Doces da Maria, acreditamos que cada doce deve ser uma experiência única.
-                    Nossa confeitaria artesanal é dedicada a criar bolos, tortas e doces que não apenas encantam o paladar, mas também aquecem o coração.
-                    Com receitas tradicionais e um toque de inovação, garantimos que cada mordida seja memorável.</p>
+                <p>Na Doces da Maria, acreditamos que cada doce deve ser uma experiência única. Nossa confeitaria artesanal é dedicada a criar bolos, tortas e doces que não apenas encantam o paladar, mas também aquecem o coração. Com receitas tradicionais e um toque de inovação, garantimos que cada mordida seja memorável.</p>
             </div>
         </section>
 
@@ -199,6 +223,5 @@
             window.location.href = link;
         });
     </script>
-
 </body>
 </html>
