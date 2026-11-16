@@ -31,7 +31,7 @@
                     <p>Descubra o sabor único dos nossos produtos, feitos com ingredientes selecionados e muito amor.</p>
                     <a class="botao" href="#contato">Entre em contato</a>
                 </div>
-                <div class="banner-imagem">
+                <div class="banner-imagem" aria-label="Galeria de fotos de doces artesanais">
                     <img src="doces_maria/bolosartesanais.jpg" alt="Bolos e doces artesanais" width="600" height="400">
                     <img src="doces_maria/bolo-cenoura-pote.jpg" alt="Bolo de cenoura no pote" width="600" height="400">
                     <img src="doces_maria/receita-pudim-pote.jpg" alt="Pudim no pote" width="600" height="400">
@@ -117,7 +117,7 @@
         <section id="contato">
             <div class="conteudo">
                 <h2>Fale comigo</h2>
-                <form action="#" method="get">
+                <form id="formContato" method="post" enctype="text/plain">
                     <div class="campo">
                         <label for="nome">Seu nome</label>
                         <input type="text" id="nome" name="nome" placeholder="Ex.: Ana Souza" required>
@@ -154,14 +154,51 @@
                     </div>
 
                     <button type="submit" class="botao">Enviar mensagem</button>
+                    <p class="status" id="statusMensagem" aria-live="polite"></p>
                 </form>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Doces da Maria - Confeitaria artesanal. Encomendas com 3 dias de antecedência.</p>
+        <p>&copy; <span id="anoAtual"></span> Doces da Maria - Confeitaria artesanal. Encomendas com 3 dias de antecedência.</p>
     </footer>
+
+    <script>
+        document.getElementById('anoAtual').textContent = new Date().getFullYear();
+
+        const form = document.getElementById('formContato');
+        const statusMensagem = document.getElementById('statusMensagem');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const telefone = document.getElementById('telefone').value.trim();
+            const assunto = document.getElementById('assunto').value;
+            const resposta = document.querySelector('input[name="resposta"]:checked').value;
+            const mensagem = document.getElementById('mensagem').value.trim();
+
+            const corpo = [
+                'Olá, Doces da Maria!',
+                '',
+                `Nome: ${nome}`,
+                `E-mail: ${email}`,
+                `Telefone: ${telefone || 'Não informado'}`,
+                `Assunto: ${assunto}`,
+                `Como prefere resposta: ${resposta}`,
+                '',
+                'Mensagem:',
+                mensagem || 'Nenhuma mensagem informada.'
+            ].join('\n');
+
+            const link = `mailto:contato@docesdamaria.com.br?subject=${encodeURIComponent('Contato - ' + assunto)}&body=${encodeURIComponent(corpo)}`;
+
+            statusMensagem.textContent = 'Abrindo seu cliente de e-mail para enviar a mensagem.';
+            window.location.href = link;
+        });
+    </script>
 
 </body>
 </html>
